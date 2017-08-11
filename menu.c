@@ -55,32 +55,36 @@ void create(int b[], int l)
 	{
 		scanf("%d", &b[i]);
 	}
-	printf("Done Creating...\n");
+	printf("Created an arrey having %d element(s)...\n", n);
 }
 
 void insert(int c[], int m)
 {
 	int i, elm;
-	for(i=n; i<m; i--)
+	for(i=n-1; i>=m; i--)
 	{
-		c[i]=c[i+1];
-		n--;
+		c[i+1]=c[i];
+		
 	}
 	printf("Enter The element to insert\n");
 	scanf("%d", &elm);
 	c[m]=elm;
-	printf("Done Inserting...\n");
+	n++;
+	printf("%d is Inserted...\n", elm);
 }
 
 void del(int d[], int o)
 {
-	int i;
-	for(i=o; i<n; i++)
+
+	int i,x;
+x=d[o];
+	for(i=o; i<n-1; i++)
 	{
-		d[i]=d[i-1];
-		n--;
+		d[i]=d[i+1];
+		
 	}
-	printf("Done Deleting...\n");
+	n--;
+	printf("%d is Deleted...", x);
 }
 
 void disp(int e[], int p)
