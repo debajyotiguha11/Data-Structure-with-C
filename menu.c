@@ -31,17 +31,33 @@ void main()
 				goto label;
 				break;
 			case 2:
-				printf("Enter the position to insert\n");
-				scanf("%d", &pos);
-				insert(a,pos);
-				goto label;
-				break;
+				if (a[0]==0)
+				{
+					noelm :
+						printf("Create the Arrey first, No elements in the arrey! \n");
+						break;
+				}
+				else
+				{
+					printf("Enter the position to insert\n");
+					scanf("%d", &pos);
+					insert(a,pos);
+					goto label;
+					break;
+				}
 			case 3:
-				printf("Enter the position to delete\n");
-				scanf("%d", &pos);
-				del(a,pos);
-				goto label;
-				break;
+				if (a[0]==0)
+				{
+					goto noelm;
+				}
+				else
+				{
+					printf("Enter the position to delete\n");
+					scanf("%d", &pos);
+					del(a,pos);
+					goto label;
+					break;
+				}
 			case 4:
 				label : 
 					disp(a,n);
@@ -49,6 +65,7 @@ void main()
 		}
 	
 	}while(ch!=0);
+	printf("Closing Menu...\n");
 }
 
 void create(int b[], int l)
