@@ -7,6 +7,7 @@ In the scripts the comments etc are lined up correctly when they are viewed in [
 - `DisplayAddress.c` - This will read and display int stored in an arrey with the address of the position.
 - `ReadDisplay.c` - This will read and display n int no using an arrey.
 - `add_int.c` - This will add int stored in an arrey by user.
+- `menu.c` - This is a MENU driven function for creating an arrey, insertion elements, deleting elements and display the arrey.
 
 ## Contribute
 

@@ -1,6 +1,7 @@
 /*
 Author: Debjyoti Guha
 Date: 11/08/2017
+Updates: Minor Fixes including enhancement. 
 Description: This is a MENU driven function for creating an arrey, insertion elements, deleting elements and display the arrey.
 */
 
@@ -27,21 +28,24 @@ void main()
 				printf("Enter The Limit\n");
 				scanf("%d", &n);
 				create(a,n);
+				goto label;
 				break;
 			case 2:
 				printf("Enter the position to insert\n");
 				scanf("%d", &pos);
 				insert(a,pos);
+				goto label;
 				break;
 			case 3:
 				printf("Enter the position to delete\n");
 				scanf("%d", &pos);
 				del(a,pos);
+				goto label;
 				break;
 			case 4:
-				printf("Elements stored are\n");
-				disp(a,n);
-				break;
+				label : 
+					disp(a,n);
+					break;
 		}
 	
 	}while(ch!=0);
@@ -77,22 +81,30 @@ void del(int d[], int o)
 {
 
 	int i,x;
-x=d[o];
+	x=d[o];
 	for(i=o; i<n-1; i++)
 	{
 		d[i]=d[i+1];
 		
 	}
 	n--;
-	printf("%d is Deleted...", x);
+	printf("%d is Deleted...\n", x);
 }
 
 void disp(int e[], int p)
 {
 	int i;
-	for(i=0;i<p;i++)
+	if (e[0]==0)
 	{
-		printf("%d\t",e[i]);
+		printf("No Element(s) stored in the Arrey\n");
+	}
+	else
+	{
+		printf("Elements stored are\n");
+		for(i=0;i<p;i++)
+		{
+			printf("%d\t",e[i]);
+		}
 	}
 }
 
