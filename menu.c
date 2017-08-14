@@ -26,11 +26,12 @@ void main()
 		{
 			case 1:
 				printf("Enter The Limit\n");
+				repeat :
 				scanf("%d", &n);
 				if(n==0)
 				{
-					printf("Please Enter a valid Limit !");
-					break;
+					printf("Please Enter a valid Limit!\n");
+					goto repeat;
 				}
 				create(a,n);
 				disp(a,n);
