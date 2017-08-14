@@ -1,7 +1,7 @@
 /*
 Author: Debjyoti Guha
-Date: 11/08/2017
-Updates: Minor Fixes including enhancement. 
+Date: 14/08/2017
+Updates: Minor Fixes and code Simplicity . 
 Description: This is a MENU driven function for creating an arrey, insertion elements, deleting elements and display the arrey.
 */
 
@@ -27,11 +27,16 @@ void main()
 			case 1:
 				printf("Enter The Limit\n");
 				scanf("%d", &n);
+				if(n==0)
+				{
+					printf("Please Enter a valid Limit !");
+					break;
+				}
 				create(a,n);
-				goto label;
+				disp(a,n);
 				break;
 			case 2:
-				if (a[0]==0)
+				if (n==0)
 				{
 					noelm :
 						printf("Create the Arrey first, No elements in the arrey! \n");
@@ -42,11 +47,11 @@ void main()
 					printf("Enter the position to insert\n");
 					scanf("%d", &pos);
 					insert(a,pos);
-					goto label;
+					disp(a,n);
 					break;
 				}
 			case 3:
-				if (a[0]==0)
+				if (n==0)
 				{
 					goto noelm;
 				}
@@ -55,11 +60,11 @@ void main()
 					printf("Enter the position to delete\n");
 					scanf("%d", &pos);
 					del(a,pos);
-					goto label;
+					disp(a,n);
 					break;
 				}
 			case 4:
-				label : 
+				 
 					disp(a,n);
 					break;
 		}
@@ -111,7 +116,7 @@ void del(int d[], int o)
 void disp(int e[], int p)
 {
 	int i;
-	if (e[0]==0)
+	if (n==0)
 	{
 		printf("No Element(s) stored in the Arrey\n");
 	}
