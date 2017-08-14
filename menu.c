@@ -68,6 +68,9 @@ void main()
 				 
 					disp(a,n);
 					break;
+			default:
+					printf("\nInvalid choice!\n");
+					break;
 		}
 	
 	}while(ch!=0);
