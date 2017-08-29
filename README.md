@@ -8,6 +8,7 @@ In the scripts the comments etc are lined up correctly when they are viewed in [
 - `ReadDisplay.c` - This will read and display n int no using an arrey.
 - `add_int.c` - This will add int stored in an arrey by user.
 - `menu.c` - This is a MENU driven function for creating an arrey, insertion elements, deleting elements and display the arrey.
+- `ptrn.c` - This will find and replace a sting given by user, using a pattern matching algorithm.
 
 ## Contribute
 
