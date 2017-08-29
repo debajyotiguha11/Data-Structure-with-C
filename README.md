@@ -9,6 +9,7 @@ In the scripts the comments etc are lined up correctly when they are viewed in [
 - `add_int.c` - This will add int stored in an arrey by user.
 - `menu.c` - This is a MENU driven function for creating an arrey, insertion elements, deleting elements and display the arrey.
 - `ptrn.c` - This will find and replace a sting given by user, using a pattern matching algorithm.
+- `stack.c` - This is a MENU driven function for creating a Stack, insertion elements(PUSH), deleting elements(POP) , display the stack, check if the stack is palindrome or not. Supported by all Over_flow and Under_flow cases.
 
 ## Contribute
 
