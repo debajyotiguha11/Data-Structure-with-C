@@ -22,9 +22,7 @@ struct stack
 {
 	int top;
 	int ele[max_size];
-};
-typedef struct stack STACK;
-STACK s;
+}s;
 
 int item;
 
@@ -36,8 +34,8 @@ void main()
 	{
 		printf("\n-----------------------------------------------------------------------------------------------\n");
 		printf("\t\t\t\t\tMENU\n");
-		printf("-------------------------------------------------------------------------------------------------\n");
 		printf("1. CREATE\t 2. PUSH\t 3. POP\t 4. Display\t 5. Check Palindrome\t 0.EXIT\n");
+		printf("-------------------------------------------------------------------------------------------------\n");
 		printf("Enter your choice: ");
 		scanf("%d", &ch);
 		switch (ch)
@@ -67,12 +65,16 @@ void main()
 //function to create STACK
 void create()
 {
-	printf("Enter the element to be inserted: ");
-	scanf("%d", &item);
-	s.top=s.top+1;
-	s.ele[s.top]=item;
-	printf("Created a STACK\n");
-
+	if(s.top == -1)
+	{
+		printf("Enter the element to be inserted: ");
+		scanf("%d", &item);
+		s.top=s.top+1;
+		s.ele[s.top]=item;
+		printf("Created a STACK with element %d at position %d\n", item, s.top);
+	}
+	else
+	printf("Already Created please PUSH elements!\n");
 }
 
 //function to PUSH items to STACK
@@ -87,7 +89,7 @@ void push(int item)
 		 {
 	      	      s.top = s.top + 1;
 		      s.ele[s.top] = item;
-		      printf("Pushed %d\n", item);
+		      printf("Pushed element: %d at position: %d\n", item, s.top);
 		 }
 }
 
@@ -100,7 +102,7 @@ void pop()
 	}
 	else
 	{
-		printf("popped item is: %d", s.ele[s.top]);
+		printf("popped element: %d from position: %d\n", s.ele[s.top], s.top);
 		s.top = s.top-1;
 	}
 	
