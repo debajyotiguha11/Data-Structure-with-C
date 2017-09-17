@@ -12,6 +12,7 @@ In the scripts the comments etc are lined up correctly when they are viewed in [
 - `stack.c` - This is a MENU driven function for creating a Stack, insertion elements(PUSH), deleting elements(POP) , display the stack, check if the stack is palindrome or not. Supported by all Over_flow and Under_flow cases.
 - `eval_postfix.c` -T his script is to evaluate a given postfix expression.
 - `toh.c` - Tower Of Hanoi Script.
+- `infix_suffix.c` - This script will convert the given Infix expression to postfix expression.
 
 ## Contribute
 
