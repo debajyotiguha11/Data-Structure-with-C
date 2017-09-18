@@ -13,7 +13,7 @@ void main()
 	printf("Enter no of disk: ");
 	scanf("%d", &n);
 	printf("The sequence involved are\n");
-	tower(n,'A','B','C');
+	tower(n,'A','C','B');
 }
 void tower(int n, char from, char top, char aux)
 {
