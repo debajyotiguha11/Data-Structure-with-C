@@ -13,6 +13,7 @@ In the scripts the comments etc are lined up correctly when they are viewed in [
 - `eval_postfix.c` -T his script is to evaluate a given postfix expression.
 - `toh.c` - Tower Of Hanoi Script.
 - `infix_suffix.c` - This script will convert the given Infix expression to postfix expression.
+- `BST.c` - Binary Search Tree Script.
 
 ## Contribute
 
