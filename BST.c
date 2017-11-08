@@ -1,18 +1,18 @@
 /*
 Author: Debjyoti Guha
-Date: 30/10/2017
-Description: Binary Search Tree
+Date: 08/11/2017
+Description:  Binary Search Tree (Modified*)
 */
 
 #include <stdio.h>
 #include <stdlib.h>
-struct BST
+struct node
 {
 	int data;
-	struct BST *left;
-	struct BST *right;
+	struct node *left;
+	struct node *right;
 };
-typedef struct BST NODE;
+typedef struct node NODE;
 NODE *node;
 NODE* createtree(NODE *node, int data)
 {
@@ -148,7 +148,7 @@ void main()
 	{
 		case 1: printf("\nEnter N value: " );
 			scanf("%d", &n);
-			printf("\nEnter the values to create BST like(6,9,5,2,8,15,24,14,7,8,5,2)\n");
+			printf("\nEnter the values to create node like(6,9,5,2,8,15,24,14,7,8,5,2)\n");
 			for(i=0; i<n; i++)
 			{
 				scanf("%d", &data);
@@ -162,6 +162,7 @@ void main()
 		case 3: printf("\nEnter the element to delete: ");
 			scanf("%d", &data);
 			root=del(root, data);
+			printf("Deleted\n");
 			break;
 		case 4: printf("\nInorder Traversal:   ");
 			inorder(root);

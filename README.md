@@ -14,6 +14,9 @@ In the scripts the comments etc are lined up correctly when they are viewed in [
 - `toh.c` - Tower Of Hanoi Script.
 - `infix_suffix.c` - This script will convert the given Infix expression to postfix expression.
 - `BST.c` - Binary Search Tree Script.
+- `graph.c` - Graph Operations Script.
+- `poly.c` - Polynomial operations using Singly Circular Linked List Script.
+- `hash.c` - Hasing Operations Script.
 
 ## Contribute
 
