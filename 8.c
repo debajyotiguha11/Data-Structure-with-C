@@ -164,19 +164,33 @@ void inend(int id,char name[],char dept[],char designation[],int salary,int ph)
 
 void delfront()
 {
-	node *tmp=first, *d=first;
-	tmp=first->next;
-	tmp->prev=NULL;
-first=tmp;
-	free(d);
+	if(first->next==NULL)
+	{
+		free(first);
+		first=NULL;
+	}
+	else{
+		node *tmp=first, *d=first;
+		tmp=first->next;
+		tmp->prev=NULL;
+		first=tmp;
+		free(d);
+	     }
 }
 
 void delend()
 {
-	node *tmp=last, *d=last;
-	tmp=last->prev;
-	tmp->next=NULL;
-last=tmp;
-	free(d);
+	if(first->next==NULL)
+	{
+		free(first);
+		first=NULL;
+	}
+	else{
+		node *tmp=last, *d=last;
+		tmp=last->prev;
+		tmp->next=NULL;
+		last=tmp;
+		free(d);
+	    }
 }
 	
