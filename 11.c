@@ -26,7 +26,7 @@ void main()
 	DFS(a,source,visited,n);
 	for(i=0;i<n;i++)
 	{
-		if(visited[i]=0){
+		if(visited[i]==0){
 			printf("Graph is not connected!...\n");
 			exit(0);}
 	}
@@ -54,7 +54,7 @@ void DFS(int a[20][20],int u, int visited[20],int n)
 {
 	int v;
 	visited[u]=1;
-	for(v=1;v<n;v++)
+	for(v=0;v<n;v++)
 	{
 		if(a[u][v]==1 && visited[v]==0)
 			DFS(a,v,visited,n);
