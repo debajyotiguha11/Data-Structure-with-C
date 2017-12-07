@@ -5,21 +5,20 @@ void delend();
 void delfront();
 void inend(int id,char name[],char dept[],char designation[],int salary,int ph);
 void infront(int id,char name[],char dept[],char designation[],int salary,int ph);
-void create(int n);
+void create(int id, char name[],char dept[],char designation[],int salary,int ph);
 void display();
 
-struct emp_node
+struct node
 {
-	struct emp_node *prev;
+	struct node *prev;
 	int id,salary,ph;
 	char name[20], dept[10], designation[10];
-	struct emp_node *next;
-};
-typedef struct emp_node node;
-node *first=NULL, *last=NULL;
+	struct node *next;
+}*first,*last;
 
 void main()
 {
+	first=NULL;last=NULL;
 	int i,n,ch,id,salary,ph;
 	char name[20], dept[10], designation[10];
 	while(1){
@@ -31,20 +30,12 @@ void main()
 		case 1:
 			printf("Enter No of element: ");
 			scanf("%d",&n);
+			for(i=0;i<n;i++)
+			{
 			printf("Enter ID, Name, Department, Designation, Salary, Ph.No.\n");
 			scanf("%d %s %s %s %d %d",&id,name,dept,designation,&salary,&ph);
-			first=(node*)malloc(sizeof(node));
-	first->id=id;
-	first->salary=salary;
-	first->ph=ph;
-	strcpy(first->name,name);
-	strcpy(first->dept,dept);
-	strcpy(first->designation,designation);
-	first->prev=NULL;
-	first->next=NULL;
-	last=first;
-			create(n);
-			
+			create(id,name,dept,designation,salary,ph);
+			}
 			break;
 		case 2:
 			if(first==NULL)
@@ -80,33 +71,33 @@ void main()
 	}
 }
 
-void create(int n)
+void create(int id, char name[],char dept[],char designation[],int salary,int ph)
 {
-int ch,id,salary,ph;
-	char name[20], dept[10], designation[10];
-	int i;
-	node *tmp=(node*)malloc(sizeof(node));
-	for(i=1;i<n;i++)
+	struct node *tmp=(struct node*)malloc(sizeof(struct node));
+	tmp->id=id;
+	tmp->salary=salary;
+	tmp->ph=ph;
+	strcpy(tmp->name,name);
+	strcpy(tmp->dept,dept);
+	strcpy(tmp->designation,designation);
+	if(first==NULL)
 	{
-		printf("Enter ID, Name, Department, Designation, Salary, Ph.No.\n");
-		scanf("%d %s %s %s %d %d",&id,name,dept,designation,&salary,&ph);
-		tmp->id=id;
-		tmp->salary=salary;
-		tmp->ph=ph;
-		strcpy(tmp->name,name);
-		strcpy(tmp->dept,dept);
-		strcpy(tmp->designation,designation);
+		tmp->prev=NULL;
+		tmp->next=NULL;
+		first=tmp;
+		last=first;
+	}
+	else{	
+		tmp->next=NULL;
 		tmp->prev=last;
 		last->next=tmp;
-		tmp->next=NULL;
 		last=tmp;
-	}
-	
+		}
 }
 
 void display()
 {
-	node *tmp=first;
+	struct node *tmp=first;
 	printf("ID\tNAME\tDEPARTMENT\tDESIGNATION\tSALARY\tPh.No\n");
 	while(tmp!=NULL)
 	{
@@ -117,7 +108,7 @@ void display()
 
 void infront(int id,char name[],char dept[],char designation[],int salary,int ph)
 {
-	node *tmp=(node*)malloc(sizeof(node));
+	struct node *tmp=(struct node*)malloc(sizeof(struct node));
 	tmp->id=id;
 	tmp->salary=salary;
 	tmp->ph=ph;		
@@ -141,7 +132,7 @@ void infront(int id,char name[],char dept[],char designation[],int salary,int ph
 void inend(int id,char name[],char dept[],char designation[],int salary,int ph)
 {
 	
-	node *tmp=(node*)malloc(sizeof(node));
+	struct node *tmp=(struct node*)malloc(sizeof(struct node));
 	tmp->id=id;
 	tmp->salary=salary;
 	tmp->ph=ph;		
@@ -170,7 +161,7 @@ void delfront()
 		first=NULL;
 	}
 	else{
-		node *tmp=first, *d=first;
+		struct node *tmp=first, *d=first;
 		tmp=first->next;
 		tmp->prev=NULL;
 		first=tmp;
@@ -186,7 +177,7 @@ void delend()
 		first=NULL;
 	}
 	else{
-		node *tmp=last, *d=last;
+		struct node *tmp=last, *d=last;
 		tmp=last->prev;
 		tmp->next=NULL;
 		last=tmp;
