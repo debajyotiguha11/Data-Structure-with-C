@@ -17,6 +17,13 @@ In the scripts the comments etc are lined up correctly when they are viewed in [
 - `graph.c` - Graph Operations Script.
 - `poly.c` - Polynomial operations using Singly Circular Linked List Script.
 - `hash.c` - Hasing Operations Script.
+- `5.c` - Evaluation of suffix expression
+- `5b.c` - Tower Of Hanoi Script
+- `6.c` - Circular Queue implementation
+- `7.c` - Singly Linked List
+- `8.c` - Doubly Linkedlist
+- `10.c` - Binary Search Tree
+- `11.c` - BFS and DFS
 
 ## Contribute
 
